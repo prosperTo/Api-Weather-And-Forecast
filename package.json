@@ -1,0 +1,41 @@
+{
+    "name": "backend-teco-challenge",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc && npm run copyFiles",
+        "copyFiles": "copyfiles --up 1 ./src/public/*.html dist && copyfiles --up 1 ./src/server/secure/*.json dist",
+        "start:dev": "nodemon dist/index --port=5000 --env=DEV --op=TOM",
+        "start:prod": "node dist/index --port=5000 --env=DEV --op=TOM",
+        "test": "mocha dist/core/tests/api.test.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "copyfiles": "^2.4.1",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "express-validator": "^6.11.1",
+        "mocha": "^9.0.2",
+        "moment": "^2.29.1",
+        "mongoose": "^5.12.12",
+        "mongoose-hidden": "^1.9.1",
+        "mongoose-unique-validator": "^2.0.3",
+        "nodemon": "^2.0.7",
+        "ora": "^5.4.1",
+        "public-ip": "^4.0.4",
+        "typescript": "^4.3.2"
+    },
+    "devDependencies": {
+        "@types/axios": "^0.14.0",
+        "@types/cors": "^2.8.10",
+        "@types/express": "^4.17.12",
+        "@types/jest": "^26.0.24",
+        "@types/node": "^15.12.0",
+        "@types/supertest": "^2.0.11",
+        "supertest": "^6.1.3"
+    }
+}
